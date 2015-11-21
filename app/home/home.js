@@ -17,9 +17,14 @@ angular.module('status-hub.home', [
 .controller('HomeController', ['Member', 'EthnicGroups', function(Member, EthnicGroups) {
     var vm = this;
 
-    Member.get({page: 1}, function(json) {
-        vm.members = json.members;
-    });
+    vm.pageChanged = function() {
+        Member.get({page: vm.currentPage}, function(json) {
+            vm.members = json.members;
+        });
+    }
+
+    vm.currentPage = 1;
+    vm.pageChanged();
 
     vm.ethnicGroups = EthnicGroups;
 }]);

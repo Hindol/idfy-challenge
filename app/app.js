@@ -3,6 +3,7 @@
 // Declare app level module which depends on views, and components
 angular.module('status-hub', [
   'ngRoute',
+  'ui.bootstrap',
   'status-hub.home',
   'status-hub.sidebar',
   'status-hub.version'
