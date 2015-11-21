@@ -1,7 +1,7 @@
 'use strict';
 
 describe('status-hub.version module', function() {
-  beforeEach(module('myApp.version'));
+  beforeEach(module('status-hub.version'));
 
   describe('interpolate filter', function() {
     beforeEach(module(function($provide) {

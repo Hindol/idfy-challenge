@@ -1,19 +1,25 @@
 'use strict';
 
-angular.module('status-hub.home', ['ngRoute', 'status-hub.api'])
+angular.module('status-hub.home', [
+    'ngRoute',
+    'status-hub.api',
+    'status-hub.home.kilogram-filter'
+])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/home', {
     templateUrl: 'home/home.html',
-    controller: 'homeCtrl'
+    controller: 'HomeController',
+    controllerAs: 'home'
   });
 }])
 
-.controller('homeCtrl', ['Member', function(Member) {
+.controller('HomeController', ['Member', 'EthnicGroups', function(Member, EthnicGroups) {
     var vm = this;
 
-    Member.get(function(json) {
-        vm.members = json["members"];
-        console.log(vm);
+    Member.get({page: 1}, function(json) {
+        vm.members = json.members;
     });
+
+    vm.ethnicGroups = EthnicGroups;
 }]);

@@ -4,6 +4,7 @@
 angular.module('status-hub', [
   'ngRoute',
   'status-hub.home',
+  'status-hub.sidebar',
   'status-hub.version'
 ]).
 config(['$routeProvider', function($routeProvider) {

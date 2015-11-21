@@ -1,1 +1,28 @@
-<p>This is the partial for home.</p>
+<div class="members row">
+  <div class="member col-md-12" ng-repeat="member in home.members">
+    <div class="row top-buffer">
+      <div class="col-md-2">
+        <img class="thumbnail img-responsive" src="{{member.image}}" alt="Avatar" />
+      </div>
+      <div class="col-md-10">
+        <h4>{{home.ethnicGroups[member.ethnicity]}}</h4>
+        <blockquote class="status">{{member.status}}</blockquote>
+      </div>
+    </div>
+    <div class="row">
+      <div class="btn-grp col-md-4" role="group">
+        <button type="button" class="btn btn-default">Favourite it!</button>
+        <button type="button" class="btn btn-default">Download</button>
+        <button type="button" class="btn btn-default">Share</button>
+      </div>
+      <div class="col-md-8">
+        <span ng-if="1 == member.drink">Drinks</span>
+        <span ng-if="0 == member.drink">Does not drink</span>
+        <span ng-if="1 == member.is_veg">Vegan</span>
+        <span ng-if="0 == member.is_veg">Not vegan</span>
+        <span>Height: {{member.height}} cm</span>
+        <span>Weight: {{member.weight | kilogram}}</span>
+      </div>
+    </div>
+  </div>
+</div>
