@@ -1,8 +1,8 @@
 'use strict';
 
-describe('myApp.view1 module', function() {
+describe('status-hub.home module', function() {
 
-  beforeEach(module('myApp.view1'));
+  beforeEach(module('status-hub.home'));
 
   describe('view1 controller', function(){
 
